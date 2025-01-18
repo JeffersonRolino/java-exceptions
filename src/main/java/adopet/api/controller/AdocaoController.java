@@ -47,7 +47,7 @@ public class AdocaoController {
         try {
             this.service.aprovar(dto);
         } catch (EntityNotFoundException exception){
-            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Adoção não encontrada...");
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(exception.getMessage());
         }
 
         return ResponseEntity.ok().build();
